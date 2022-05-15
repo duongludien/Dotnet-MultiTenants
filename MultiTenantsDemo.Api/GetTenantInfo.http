@@ -1,0 +1,46 @@
+GET http://tenant1.localhost:5138/test/tenant
+
+###
+
+GET http://tenant2.localhost:5138/test/tenant
+
+###
+
+POST http://tenant1.localhost:5138/test/post
+Content-Type: application/json
+
+{
+  "title": "A very first blog post",
+  "content": "Here is the post content"
+}
+
+###
+
+POST http://tenant2.localhost:5138/test/post
+Content-Type: application/json
+
+{
+  "title": "A very first blog post",
+  "content": "Here is the post content"
+}
+
+###
+
+POST http://localhost:5138/test/tenant
+Content-Type: application/json
+
+{
+  "identifier": "tenant3",
+  "name": "Tenant 3",
+  "connectionString": "User ID=postgres;Password=NoPassword1;Host=localhost;Port=5432;Database=MultiTenantsDemo.Tenant3;"
+}
+
+###
+
+POST http://tenant3.localhost:5138/test/post
+Content-Type: application/json
+
+{
+  "title": "A very first blog post",
+  "content": "Here is the post content"
+}
